@@ -1,4 +1,4 @@
-###👋 Olá! Eu sou o Lucas Carvalho
+### 👋 Olá! Eu sou o Lucas Carvalho
 💻 Backend Developer | Java & Spring Boot | Estudante de ADS 
 
 - 🎓 Estudante de Análise e Desenvolvimento de Sistemas  
