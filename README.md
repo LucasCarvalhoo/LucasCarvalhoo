@@ -3,6 +3,11 @@
 
 Iniciando minha carreira com foco em Back-end, estou em constante aprendizado e dedicado a resolver problemas com soluções eficientes. Busco contribuir em projetos desafiadores e crescer profissionalmente em equipes que valorizam inovação e colaboração.
 
+## 🔹 Sobre mim
+- 🎓 Estudante de Análise e Desenvolvimento de Sistemas  
+- 💡 Apaixonado por backend, arquitetura de software e boas práticas  
+- 🚀 Em busca de aprimorar minhas habilidades em segurança e CI/CD
+
 ## 🚀 Tecnologias  
 
 <div style="display: flex; flex-wrap: wrap; align-items: center;">
