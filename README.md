@@ -40,7 +40,7 @@ Aplicação de lista de tarefas desenvolvida com **Angular e Firebase**. Permite
 ### 🔥 [CRUD Java + Angular](https://github.com/LucasCarvalhoo/crud-java-angular)  
 Sistema **full stack** de gerenciamento de usuários, utilizando **Java Spring Boot** no backend e **Angular** no frontend. Inclui persistência de dados com **PostgreSQL**, autenticação **JWT**, arquitetura **RESTful**, e boas práticas de desenvolvimento.  
 
-### 🔢 [Calculadora de IMC](https://github.com/LucasCarvalhoo/Calculadora)  
+### 🔢 [Calculadora de IMC](https://lucascarvalhoo.github.io/Calculadora/)  
 Projeto simples de uma calculadora de Índice de Massa Corporal (IMC), que permite ao usuário inserir peso e altura para calcular seu IMC automaticamente. O resultado é exibido junto com uma classificação (como "Normal", "Sobrepeso", "Obesidade", etc.). Desenvolvido com foco em praticar lógica, manipulação de DOM e responsividade.
 
 ### ✅ [Testes Automatizados com Cypress](https://github.com/LucasCarvalhoo/cypress-basico-v2)  
