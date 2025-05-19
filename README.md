@@ -35,7 +35,7 @@ Iniciando minha carreira com foco em Back-end, estou em constante aprendizado e 
 ## 📌 Projetos em Destaque  
 
 ### 📝 [To-Do List](https://github.com/LucasCarvalhoo/todo-list)  
-Aplicação de lista de tarefas desenvolvida com **Angular e Firebase**. Permite adicionar, editar, remover e marcar tarefas como concluídas. Ideal para quem deseja aprender sobre **CRUD, Firestore e autenticação com Firebase**.  
+Aplicação de lista de tarefas desenvolvida com **Angular e PostgreSQL**. Permite adicionar, editar, remover e marcar tarefas como concluídas. Ideal para quem deseja aprender sobre **CRUD, PostgreSQL e autenticação com JWT**.  
 
 ### 🔥 [CRUD Java + Angular](https://github.com/LucasCarvalhoo/crud-java-angular)  
 Sistema **full stack** de gerenciamento de usuários, utilizando **Java Spring Boot** no backend e **Angular** no frontend. Inclui persistência de dados com **PostgreSQL**, autenticação **JWT**, arquitetura **RESTful**, e boas práticas de desenvolvimento.  
