@@ -1,11 +1,9 @@
-name: Update README Stats
+name: Update GitHub Stats
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # A cada 6 horas
-  workflow_dispatch:       # Permite execução manual
-  push:
-    branches: [ main ]     # Atualiza quando fizer push
+    - cron: '0 */12 * * *'  # A cada 12 horas
+  workflow_dispatch:        # Permite execução manual
 
 jobs:
   update-stats:
