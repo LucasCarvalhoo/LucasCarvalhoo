@@ -10,7 +10,7 @@ Espero que você goste de estar aqui! :)
 
 <div>
   <a href="https://github.com/LucasCarvalhoo">
-    <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&langs_count=7&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"/>
+    <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&langs_count=7&theme=dracula&hide=javascript,python&include_all_commits=true&count_private=true&hide_border=true"/>
     <img height="150em" src="https://github-readme-stats.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"/>
   </a>
 </div>
