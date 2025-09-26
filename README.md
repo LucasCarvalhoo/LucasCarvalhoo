@@ -1,53 +1,65 @@
-### 👋 Olá! Eu sou o Lucas Carvalho
-💻 Desenvolvedor Júnior de Software | Focado em Back-end 
+### Olá! Eu sou o Lucas Carvalho! 👋
+#### Bem-vindo ao meu perfil!
 
-Iniciando minha carreira com foco em Back-end, estou em constante aprendizado e dedicado a resolver problemas com soluções eficientes. Busco contribuir em projetos desafiadores e crescer profissionalmente em equipes que valorizam inovação e colaboração.
+💻 Sou desenvolvedor de software com foco em **Back-end**. <br>
+🚀 Estou iniciando minha carreira e sempre em busca de novos desafios e aprendizados. Sou uma pessoa dedicada, curiosa e apaixonada por resolver problemas através da tecnologia.
 
-## 🔹 Sobre mim
-- 🎓 Estudante de Análise e Desenvolvimento de Sistemas  
-- 💡 Apaixonado por backend, arquitetura de software e boas práticas  
-- 🚀 Em busca de aprimorar minhas habilidades em segurança e CI/CD
+#### É importante...
+...dizer que aqui no meu GitHub estou documentando minha jornada de evolução como desenvolvedor. <br>
+Espero que você goste de estar aqui! :)
 
-## 🚀 Tecnologias  
-
-<div style="display: flex; flex-wrap: wrap; align-items: center;">
-  &nbsp;&nbsp;<img width='50' height='50' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" />&nbsp;&nbsp;
-  &nbsp;&nbsp;<img width='50' height='50' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" />&nbsp;&nbsp;
-  &nbsp;&nbsp;<img width='50' height='50' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" />&nbsp;&nbsp;
-  &nbsp;&nbsp;<img width='50' height='50' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" />&nbsp;&nbsp;
-  &nbsp;&nbsp;<img width='50' height='50' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />&nbsp;&nbsp;
-  &nbsp;&nbsp;<img width='50' height='50' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" />&nbsp;&nbsp;
-  &nbsp;&nbsp;<img width='50' height='50' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />&nbsp;&nbsp;
-  &nbsp;&nbsp;<img width='50' height='50' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" />&nbsp;&nbsp;
+<div>
+  <a href="https://github.com/LucasCarvalhoo">
+  <img height="150em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&langs_count=7&theme=dracula"/> 
+  <img height="150em" src="https://github-readme-stats.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
 </div>
 
+#### &#128295; Tecnologias:
 
-## 📬 Você também me encontra em:  
+- **Back-End:**<br>
+<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/> <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"> 
 
-&nbsp;<a href="https://www.linkedin.com/in/lucascarvalho-dev/" target="_blank">
-  <img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white">
-</a>&nbsp;
-&nbsp;<a href="https://www.linkedin.com/in/lucascarvalho-dev/" target="_blank">
-  <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white">
-</a>&nbsp;
+- **Front-End:**<br>
+<img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"> <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white"> <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
 
+- **Bancos de Dados:**<br>
+<img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white">
 
-## 📌 Projetos em Destaque  
+- **DevOps & Ferramentas:**<br>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"> <img src="https://img.shields.io/badge/GIT-E44C30?style=for-the-badge&logo=git&logoColor=white"/>
 
-### 📝 [To-Do List](https://github.com/LucasCarvalhoo/todo-list)  
-Aplicação de lista de tarefas desenvolvida com **Angular e PostgreSQL**. Permite adicionar, editar, remover e marcar tarefas como concluídas. Ideal para quem deseja aprender sobre **CRUD, PostgreSQL e autenticação com JWT**.  
+- **Testes:**<br>
+<img src="https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white">
 
-### 🔥 [CRUD Java + Angular](https://github.com/LucasCarvalhoo/crud-java-angular)  
-Sistema **full stack** de gerenciamento de usuários, utilizando **Java Spring Boot** no backend e **Angular** no frontend. Inclui persistência de dados com **PostgreSQL**, autenticação **JWT**, arquitetura **RESTful**, e boas práticas de desenvolvimento.  
+#### 🎓 Formação:
+- **Análise e Desenvolvimento de Sistemas** (em andamento)
 
-### 🔢 [Calculadora de IMC](https://github.com/LucasCarvalhoo/caculadora-imc)  
-Projeto simples de uma calculadora de Índice de Massa Corporal (IMC), que permite ao usuário inserir peso e altura para calcular seu IMC automaticamente. O resultado é exibido junto com uma classificação (como "Normal", "Sobrepeso", "Obesidade", etc.). Desenvolvido com foco em praticar lógica, manipulação de DOM e responsividade.
+#### 🚀 Projetos em Destaque:
 
-### ✅ [Testes Automatizados com Cypress](https://github.com/LucasCarvalhoo/cypress-basico-v2)  
-Repositório com testes automatizados usando **Cypress**, focado em **E2E testing**. Inclui exemplos de boas práticas para automação de testes, validação de elementos na interface e integração com CI/CD.  
+**📝 [To-Do List](https://github.com/LucasCarvalhoo/todo-list)**  
+Aplicação de lista de tarefas com **Angular e PostgreSQL**. Sistema completo de CRUD com autenticação JWT.
 
-### 🔐 [AuthShield - Sistema de Autenticação](https://github.com/LucasCarvalhoo/AuthShield)  
-Projeto focado em **autenticação e autorização**, implementando **Spring Security com JWT** no backend e um frontend seguro em **Angular**. Inclui controle de acesso baseado em roles, refresh tokens e boas práticas de segurança. 
+**🔥 [CRUD Java + Angular](https://github.com/LucasCarvalhoo/crud-java-angular)**  
+Sistema **full stack** de gerenciamento de usuários com **Spring Boot** e **Angular**. Arquitetura RESTful e boas práticas.
 
+**🔢 [Calculadora de IMC](https://github.com/LucasCarvalhoo/caculadora-imc)**  
+Calculadora responsiva de Índice de Massa Corporal com classificação automática.
 
+**✅ [Testes Automatizados com Cypress](https://github.com/LucasCarvalhoo/cypress-basico-v2)**  
+Automação de testes E2E com **Cypress** e integração CI/CD.
 
+#### ✍🏻 Me encontre aqui:
+
+<div>
+<a href="https://www.linkedin.com/in/lucascarvalho-dev/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
+<a href="https://www.instagram.com/lucascarvalho.dev/" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+</div>
+
+#### 💡 Atualmente estudando:
+- Arquitetura de software e microserviços
+- Segurança em aplicações web
+- CI/CD e DevOps
+
+---
+
+💬 **"Em busca de contribuir em projetos desafiadores e crescer profissionalmente em equipes que valorizam inovação e colaboração."**
