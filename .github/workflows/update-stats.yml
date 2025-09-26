@@ -35,10 +35,3 @@ jobs:
           plugin_languages_sections: most-used
           plugin_languages_indepth: yes
           plugin_languages_analysis_timeout: 15
-
-      - name: Commit e push
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add assets/metrics.svg
-          git diff --staged --quiet || (git commit -m "📊 Atualizar métricas do perfil" && git push)
