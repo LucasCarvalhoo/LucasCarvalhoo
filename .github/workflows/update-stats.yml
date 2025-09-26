@@ -2,7 +2,7 @@ name: Update GitHub Profile Stats
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 */6 * * *" # a cada 6 horas
   workflow_dispatch:
   push:
     branches: [ main ]
@@ -20,28 +20,33 @@ jobs:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
     
       - name: Garantir pasta de saída
-        run: | 
-          mkdir -p assets
+        run: mkdir -p assets
 
-          curl -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
-            -o assets/stats.svg \
-            "https://github-readme-stats-sigma-five.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"
-
-
-      - name: Substituir no README
-        run: |
-          # Substitui os links por arquivos locais (commitados no repo)
-          sed -i 's#https://github-readme-stats\.vercel\.app/api?.*#assets/stats.svg" />#' README.md
-
-      - name: Generate GitHub Metrics (inclui privados)
+      # 📊 Linguagens (lowlighter/metrics)
+      - name: Generate GitHub Metrics (linguagens usadas)
         uses: lowlighter/metrics@latest
         with:
           filename: assets/metrics-stack.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          base: ""
+          base: "" # sem card padrão
           plugin_languages: yes
           plugin_languages_ignored: html, css
           plugin_languages_details: percentage
           plugin_languages_limit: 8
           plugin_languages_sections: most-used
           plugin_languages_analysis_timeout: 15
+
+      # ⭐ Estatísticas gerais (Readme Stats)
+      - name: Download GitHub Stats Card
+        run: |
+          curl -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+            -o assets/stats.svg \
+            "https://github-readme-stats-sigma-five.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"
+
+      # 📤 Commit e push
+      - name: Commit e push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add assets/metrics-stack.svg assets/stats.svg
+          git diff --staged --quiet || (git commit -m "📊 Atualizar métricas do perfil" && git push)
