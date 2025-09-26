@@ -25,7 +25,7 @@ jobs:
       - name: Generate GitHub Metrics (inclui privados)
         uses: lowlighter/metrics@latest
         with:
-          filename: assets/metrics.svg
+          filename: assets/metrics-stack.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           base: header
           plugin_languages: yes
@@ -33,5 +33,4 @@ jobs:
           plugin_languages_details: percentage
           plugin_languages_limit: 8
           plugin_languages_sections: most-used
-          plugin_languages_indepth: yes
           plugin_languages_analysis_timeout: 15
