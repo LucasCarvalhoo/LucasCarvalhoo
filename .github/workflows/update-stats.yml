@@ -1,25 +1,16 @@
-name: Update README with GitHub Stats
+name: Update README Stats
+
 on:
   schedule:
-    - cron: '0 0 * * *'  # Atualiza diariamente
-  workflow_dispatch:      # Permite executar manualmente
+    - cron: '0 */12 * * *' # A cada 12 horas
+  workflow_dispatch: # Permite execução manual
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    name: Update README with stats
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        
-      - name: Update README with GitHub Activity
-        uses: ashutosh00710/github-readme-activity-graph@master
-        with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update GitHub stats"
-          git push
+      - uses: actions/checkout@v3
+      - uses: jamesgeorge007/github-activity-readme@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
