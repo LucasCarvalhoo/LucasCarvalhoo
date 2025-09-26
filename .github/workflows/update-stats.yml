@@ -28,6 +28,11 @@ jobs:
             "https://github-readme-stats-sigma-five.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"
 
 
+      - name: Substituir no README
+        run: |
+          # Substitui os links por arquivos locais (commitados no repo)
+          sed -i 's#https://github-readme-stats\.vercel\.app/api?.*#assets/stats.svg" />#' README.md
+
       - name: Generate GitHub Metrics (inclui privados)
         uses: lowlighter/metrics@latest
         with:
