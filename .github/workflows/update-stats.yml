@@ -20,7 +20,13 @@ jobs:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
     
       - name: Garantir pasta de saída
-        run: mkdir -p assets
+        run: | 
+          mkdir -p assets
+
+          curl -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+            -o assets/stats.svg \
+            "https://github-readme-stats-sigma-five.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"
+
 
       - name: Generate GitHub Metrics (inclui privados)
         uses: lowlighter/metrics@latest
