@@ -10,8 +10,7 @@ Espero que você goste de estar aqui! :)
 
 <div>
   <a href="https://github.com/LucasCarvalhoo">
-    <img height="150em" src="assets/langs.svg"/>
-    <img height="150em" src="assets/stats.svg"/>
+    <img height="150em" src="assets/metrics.svg"/>
   </a>
 </div>
 
