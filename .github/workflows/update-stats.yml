@@ -1,14 +1,14 @@
-name: Update README with GitHub Stats
+name: Force Stats Update
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # A cada 6 horas
-  workflow_dispatch:       # Permite execução manual
+    - cron: '0 */12 * * *'  # A cada 12 horas
+  workflow_dispatch:        # Execução manual
   push:
-    branches: [ main ]     # Atualiza quando fizer push
+    branches: [ main ]
 
 jobs:
-  update-readme:
+  force-update:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -16,22 +16,26 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+        
+      - name: Force cache refresh for GitHub stats
+        run: |
+          # Faz requisições para forçar atualização do cache
+          curl -s "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&cache_bust=$(date +%s)"
+          curl -s "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&langs_count=7&theme=dracula&include_all_commits=true&count_private=true&cache_bust=$(date +%s)"
           
-      - name: Update README with latest activity
-        uses: DenverCoder1/readme-github-stats@main
-        with:
-          github_token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      - name: Update README with timestamp
+        run: |
+          # Adiciona comentário invisível para forçar mudança no README
+          echo "<!-- Última atualização: $(date) -->" >> README.md
           
-      - name: Commit and push changes
+      - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add README.md
           if git diff --staged --quiet; then
-            echo "Nenhuma alteração para commit"
+            echo "Nenhuma alteração"
           else
-            git commit -m "📊 Atualizar estatísticas do README"
+            git commit -m "🔄 Forçar atualização das estatísticas"
             git push
           fi
