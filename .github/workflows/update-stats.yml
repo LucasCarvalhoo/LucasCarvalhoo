@@ -19,29 +19,23 @@ jobs:
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
-      - name: Gerar estatísticas
-        run: |
-          mkdir -p assets
-
-          # Estatísticas gerais (inclui privados)
-          curl -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
-            -o assets/stats.svg \
-            "https://github-readme-stats-sigma-five.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"
-
-          # Linguagens mais usadas (inclui privados)
-          curl -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
-            -o assets/langs.svg \
-            "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&langs_count=8&theme=dracula&count_private=true&hide_border=true"
-
-      - name: Substituir no README
-        run: |
-          # Substitui os links por arquivos locais (commitados no repo)
-          sed -i 's#https://github-readme-stats\.vercel\.app/api/top-langs.*#assets/langs.svg" />#' README.md
-          sed -i 's#https://github-readme-stats\.vercel\.app/api?.*#assets/stats.svg" />#' README.md
+      - name: Generate GitHub Metrics (inclui privados)
+        uses: lowlighter/metrics@latest
+        with:
+          filename: assets/metrics.svg
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          base: "" # Não mostra o card padrão, só plugins
+          plugin_languages: yes
+          plugin_languages_ignored: html, css
+          plugin_languages_details: percentage
+          plugin_languages_limit: 8
+          plugin_languages_sections: most-used
+          plugin_languages_indepth: yes
+          plugin_languages_analysis_timeout: 15
 
       - name: Commit e push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add README.md assets/
-          git diff --staged --quiet || (git commit -m "📊 Atualizar estatísticas do perfil" && git push)
+          git add assets/metrics.svg
+          git diff --staged --quiet || (git commit -m "📊 Atualizar métricas do perfil" && git push)
