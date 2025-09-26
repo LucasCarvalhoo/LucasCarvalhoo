@@ -27,7 +27,7 @@ jobs:
         with:
           filename: assets/metrics.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          base: header, repositories, activity, community
+          base: header
           plugin_languages: yes
           plugin_languages_ignored: html, css
           plugin_languages_details: percentage
