@@ -32,7 +32,7 @@ Espero que você goste de estar aqui! :)
 <img src="https://img.shields.io/badge/Cypress-17202C?style=for-the-badge&logo=cypress&logoColor=white">
 
 #### 🎓 Formação:
-- **Análise e Desenvolvimento de Sistemas** (em andamento)
+- **Análise e Desenvolvimento de Sistemas**
 
 #### 🚀 Projetos em Destaque:
 
