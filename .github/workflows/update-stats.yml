@@ -2,7 +2,7 @@ name: Update GitHub Profile Stats
 
 on:
   schedule:
-    - cron: "0 */6 * * *" # A cada 6 horas
+    - cron: "0 */6 * * *"
   workflow_dispatch:
   push:
     branches: [ main ]
@@ -27,7 +27,7 @@ jobs:
         with:
           filename: assets/metrics-stack.svg
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          base: header
+          base: ""
           plugin_languages: yes
           plugin_languages_ignored: html, css
           plugin_languages_details: percentage
