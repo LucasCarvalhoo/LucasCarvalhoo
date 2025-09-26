@@ -1,41 +1,37 @@
-name: Force Stats Update
+name: Update GitHub Profile Stats
 
 on:
   schedule:
-    - cron: '0 */12 * * *'  # A cada 12 horas
-  workflow_dispatch:        # Execução manual
+    - cron: '0 */6 * * *'  # A cada 6 horas
+  workflow_dispatch:
   push:
     branches: [ main ]
 
 jobs:
-  force-update:
+  update-readme:
     runs-on: ubuntu-latest
     permissions:
       contents: write
       
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        
-      - name: Force cache refresh for GitHub stats
-        run: |
-          # Faz requisições para forçar atualização do cache
-          curl -s "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&cache_bust=$(date +%s)"
-          curl -s "https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&langs_count=7&theme=dracula&include_all_commits=true&count_private=true&cache_bust=$(date +%s)"
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           
-      - name: Update README with timestamp
-        run: |
-          # Adiciona comentário invisível para forçar mudança no README
-          echo "<!-- Última atualização: $(date) -->" >> README.md
+      - name: Generate GitHub Activity README
+        uses: jamesgeorge007/github-activity-readme@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           
-      - name: Commit changes
+      - name: Update README with private repo stats
+        run: |
+          # Força refresh das estatísticas
+          curl -s "https://github-readme-stats-sigma-five.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&cache_seconds=1"
+          curl -s "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&langs_count=8&theme=dracula&include_all_commits=true&count_private=true&cache_seconds=1"
+          
+      - name: Commit and push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add README.md
-          if git diff --staged --quiet; then
-            echo "Nenhuma alteração"
-          else
-            git commit -m "🔄 Forçar atualização das estatísticas"
-            git push
-          fi
+          git add -A
+          git diff --staged --quiet || (git commit -m "📊 Atualizar estatísticas do perfil" && git push)
