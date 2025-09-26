@@ -8,21 +8,25 @@ on:
     branches: [ main ]     # Atualiza quando fizer push
 
 jobs:
-  update-readme:
+  update-stats:
     runs-on: ubuntu-latest
     permissions:
-      contents: write      # Permissão para fazer commit
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
           
-      - name: Update README
-        uses: anmol098/waka-readme-stats@master
-        with:
-          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          SHOW_PROJECTS: "False"
-          SHOW_LINES_OF_CODE: "True"
-          SHOW_LANGUAGE_PER_REPO: "True"
-          SHOW_SHORT_INFO: "False"
+      - name: Generate GitHub Stats
+        uses: jamesgeorge007/github-activity-readme@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          
+      - name: Push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff --staged --quiet || git commit -m "📊 Update GitHub stats"
+          git push
