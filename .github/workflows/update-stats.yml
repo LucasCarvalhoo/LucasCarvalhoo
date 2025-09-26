@@ -2,7 +2,7 @@ name: Update GitHub Profile Stats
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # A cada 6 horas
+    - cron: "0 */6 * * *" # A cada 6 horas
   workflow_dispatch:
   push:
     branches: [ main ]
@@ -12,26 +12,36 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          
-      - name: Generate GitHub Activity README
-        uses: jamesgeorge007/github-activity-readme@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          
-      - name: Update README with private repo stats
+
+      - name: Gerar estatísticas
         run: |
-          # Força refresh das estatísticas
-          curl -s "https://github-readme-stats-sigma-five.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&cache_seconds=1"
-          curl -s "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&langs_count=8&theme=dracula&include_all_commits=true&count_private=true&cache_seconds=1"
-          
-      - name: Commit and push
+          mkdir -p assets
+
+          # Estatísticas gerais (inclui privados)
+          curl -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+            -o assets/stats.svg \
+            "https://github-readme-stats-sigma-five.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"
+
+          # Linguagens mais usadas (inclui privados)
+          curl -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+            -o assets/langs.svg \
+            "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&langs_count=8&theme=dracula&count_private=true&hide_border=true"
+
+      - name: Substituir no README
+        run: |
+          # Substitui os links por arquivos locais (commitados no repo)
+          sed -i 's#https://github-readme-stats\.vercel\.app/api/top-langs.*#assets/langs.svg" />#' README.md
+          sed -i 's#https://github-readme-stats\.vercel\.app/api?.*#assets/stats.svg" />#' README.md
+
+      - name: Commit e push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add -A
+          git add README.md assets/
           git diff --staged --quiet || (git commit -m "📊 Atualizar estatísticas do perfil" && git push)
