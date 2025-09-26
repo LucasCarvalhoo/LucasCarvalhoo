@@ -2,15 +2,28 @@ name: Update README Stats
 
 on:
   schedule:
-    - cron: '0 */12 * * *' # A cada 12 horas
-  workflow_dispatch: # Permite execução manual
+    - cron: '0 */6 * * *'  # A cada 6 horas (mais frequente)
+  workflow_dispatch:       # Permite execução manual
+  push:
+    branches: [ main ]     # Atualiza quando fizer push
 
 jobs:
   update-readme:
     runs-on: ubuntu-latest
-    name: Update README with stats
+    permissions:
+      contents: write      # Permissão para fazer commit
     steps:
-      - uses: actions/checkout@v3
-      - uses: jamesgeorge007/github-activity-readme@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}  # Use o mesmo nome do secret
+          
+      - name: Update README
+        uses: anmol098/waka-readme-stats@master
+        with:
+          WAKATIME_API_KEY: ${{ secrets.WAKATIME_API_KEY }}
+          GH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          SHOW_PROJECTS: "False"
+          SHOW_LINES_OF_CODE: "True"
+          SHOW_LANGUAGE_PER_REPO: "True"
+          SHOW_SHORT_INFO: "False"
