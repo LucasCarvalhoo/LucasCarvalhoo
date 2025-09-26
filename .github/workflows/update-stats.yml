@@ -18,6 +18,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+    
+      - name: Garantir pasta de saída
+        run: mkdir -p assets
 
       - name: Generate GitHub Metrics (inclui privados)
         uses: lowlighter/metrics@latest
