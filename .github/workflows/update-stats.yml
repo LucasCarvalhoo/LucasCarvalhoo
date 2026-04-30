@@ -2,7 +2,7 @@ name: Update GitHub Profile Stats
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # a cada 6 horas
+    - cron: "0 0 */7 * *" # a cada 7 dias
   workflow_dispatch:
   push:
     branches: [ main ]
