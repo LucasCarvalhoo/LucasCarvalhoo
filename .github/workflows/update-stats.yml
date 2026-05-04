@@ -25,14 +25,14 @@ jobs:
       # ⭐ Estatísticas gerais (Readme Stats)
       - name: Download GitHub Stats Card
         run: |
-          curl -fsSL -H "Authorization: Bearer ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+          curl -fsSL -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
             -o assets/stats.svg \
             "https://github-readme-stats-sigma-five.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"
 
       # 🌐 Linguagens mais usadas
       - name: Download Top Languages Card
         run: |
-          curl -fsSL -H "Authorization: Bearer ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+          curl -fsSL -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
             -o assets/top-langs.svg \
             "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&theme=dracula&hide_border=true&count_private=true"
 
