@@ -34,7 +34,7 @@ jobs:
         run: |
           curl -fsSL -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
             -o assets/top-langs.svg \
-            "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&theme=dracula&hide_border=true&count_private=true&langs_count=6&hide=python,jupyter%20notebook&exclude_repo=LucasCarvalhoo"
+            "https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&theme=dracula&hide_border=true&count_private=true&langs_count=6&hide=python,jupyter%20notebook"
 
       # 📤 Commit e push
       - name: Commit e push
