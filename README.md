@@ -10,7 +10,7 @@ Espero que você goste de estar aqui! :)
 
 <div>
   <a href="https://github.com/LucasCarvalhoo">
-    <img height="150em" src="assets/metrics-stack.svg"/>
+    <img height="150em" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=LucasCarvalhoo&layout=compact&theme=dracula&hide_border=true"/>
     <img height="150em" src="assets/stats.svg"/>
   </a>
 </div>
