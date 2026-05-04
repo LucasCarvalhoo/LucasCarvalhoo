@@ -22,20 +22,6 @@ jobs:
       - name: Garantir pasta de saída
         run: mkdir -p assets
 
-      # 📊 Linguagens (lowlighter/metrics)
-      - name: Generate GitHub Metrics (linguagens usadas)
-        uses: lowlighter/metrics@latest
-        with:
-          filename: assets/metrics-stack.svg
-          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-          base: "" # sem card padrão
-          plugin_languages: yes
-          plugin_languages_ignored: html, css, python
-          plugin_languages_details: percentage
-          plugin_languages_limit: 8
-          plugin_languages_sections: most-used
-          plugin_languages_analysis_timeout: 15
-
       # ⭐ Estatísticas gerais (Readme Stats)
       - name: Download GitHub Stats Card
         run: |
@@ -48,5 +34,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add assets/metrics-stack.svg assets/stats.svg
+          git add assets/stats.svg
           git diff --staged --quiet || (git commit -m "📊 Atualizar métricas do perfil" && git push)
