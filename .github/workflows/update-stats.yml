@@ -49,4 +49,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add assets/metrics-stack.svg assets/stats.svg
-          git diff --staged --quiet || (git commit -m "📊 Atualizar métricas do perfil" && git pull --rebase origin main && git push)
+          if ! git diff --staged --quiet; then
+            git commit -m "📊 Atualizar métricas do perfil"
+            git pull --rebase origin main
+            git push
+          fi
