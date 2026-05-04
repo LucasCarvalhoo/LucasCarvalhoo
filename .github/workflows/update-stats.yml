@@ -2,7 +2,7 @@ name: Update GitHub Profile Stats
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # a cada 6 horas
+    - cron: "0 0 */7 * *" # a cada 7 dias
   workflow_dispatch:
   push:
     branches: [ main ]
@@ -39,9 +39,9 @@ jobs:
       # ⭐ Estatísticas gerais (Readme Stats)
       - name: Download GitHub Stats Card
         run: |
-          curl -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+          curl -fsSL \
             -o assets/stats.svg \
-            "https://github-readme-stats-sigma-five.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"
+            "https://github-readme-stats.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"
 
       # 📤 Commit e push
       - name: Commit e push
@@ -49,4 +49,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add assets/metrics-stack.svg assets/stats.svg
-          git diff --staged --quiet || (git commit -m "📊 Atualizar métricas do perfil" && git push)
+          if ! git diff --staged --quiet; then
+            git commit -m "📊 Atualizar métricas do perfil"
+            git pull --rebase origin main
+            git push
+          fi
