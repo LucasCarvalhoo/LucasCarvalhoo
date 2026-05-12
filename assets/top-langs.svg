@@ -65,7 +65,7 @@
             data-testid="lang-progress"
             x="0" 
             y="0"
-            width="168.43" 
+            width="154.77" 
             height="8"
             fill="#f1e05a"
           />
@@ -73,9 +73,9 @@
           <rect
             mask="url(#rect-mask)" 
             data-testid="lang-progress"
-            x="168.43" 
+            x="154.77" 
             y="0"
-            width="66.54" 
+            width="61.08" 
             height="8"
             fill="#b07219"
           />
@@ -83,49 +83,49 @@
           <rect
             mask="url(#rect-mask)" 
             data-testid="lang-progress"
-            x="234.97000000000003" 
+            x="215.85000000000002" 
             y="0"
-            width="37.31" 
+            width="49.86" 
             height="8"
-            fill="#663399"
+            fill="#3178c6"
           />
         
           <rect
             mask="url(#rect-mask)" 
             data-testid="lang-progress"
-            x="272.28000000000003" 
+            x="265.71000000000004" 
             y="0"
-            width="27.72" 
+            width="34.30" 
             height="8"
-            fill="#e34c26"
+            fill="#663399"
           />
         
       
     <g transform="translate(0, 25)">
       <circle cx="5" cy="6" r="5" fill="#f1e05a" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        JavaScript 56.14%
+        JavaScript 51.59%
       </text>
     </g>
   
     <g transform="translate(150, 25)">
       <circle cx="5" cy="6" r="5" fill="#b07219" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        Java 22.18%
+        Java 20.36%
       </text>
     </g>
   
     <g transform="translate(0, 50)">
-      <circle cx="5" cy="6" r="5" fill="#663399" />
+      <circle cx="5" cy="6" r="5" fill="#3178c6" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        CSS 12.44%
+        TypeScript 16.62%
       </text>
     </g>
   
     <g transform="translate(150, 50)">
-      <circle cx="5" cy="6" r="5" fill="#e34c26" />
+      <circle cx="5" cy="6" r="5" fill="#663399" />
       <text data-testid="lang-name" x="15" y="10" class='lang-name'>
-        HTML 9.24%
+        CSS 11.43%
       </text>
     </g>
   
