@@ -41,7 +41,7 @@ jobs:
         run: |
           curl -fsSL \
             -o assets/stats.svg \
-            "https://github-readme-stats.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&include_all_commits=true&count_private=true&hide_border=true"
+            "https://github-readme-stats.vercel.app/api?username=LucasCarvalhoo&show_icons=true&theme=dracula&hide_border=true"
 
       # 📤 Commit e push
       - name: Commit e push
